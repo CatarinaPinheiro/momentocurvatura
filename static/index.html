@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css" media="screen" charset="utf-8">
+		<script src="/js/jquery-3.2.1.min.js" charset="utf-8"></script>
+		<script src="/js/serializeObject.js" charset="utf-8"></script>
+		<script src="/js/bootstrap.min.js" charset="utf-8"></script>
+		<script src="/js/Chart.min.js" charset="utf-8"></script>
+		<script src="/js/main.js" charset="utf-8"></script>
+		<title>Concreto</title>
+	</head>
+	<body>
+		<div class="container">
+			<h1>M-&Phi;</h1>
+			<div class="row">
+				<div class="col-md-6">
+					<h2>input</h2>
+					<form>
+						<div class="input-group">
+							<label>base</label>
+							<input value="200" class="form-control" name="base" type="number" />
+						</div>
+						<div class="input-group">
+							<label>altura</label>
+							<input value="650" class="form-control" name="altura" type="number" />
+						</div>
+						<div class="input-group">
+							<label>resistencia_concreto</label>
+							<input value="25" class="form-control" name="resistencia_concreto" type="number" />
+						</div>
+						<div class="input-group">
+							<label>resistencia_escoamento_aco</label>
+							<input value="500" class="form-control" name="resistencia_escoamento_aco" type="number" />
+						</div>
+						<div class="input-group">
+							<label>resistencia_ultima_aco</label>
+							<input value="600" class="form-control" name="resistencia_ultima_aco" type="number" />
+						</div>
+						<div class="input-group">
+							<label>deformacao_ultima_aco</label>
+							<input value="0.05" class="form-control" name="deformacao_ultima_aco" type="number" />
+						</div>
+						<div class="input-group">
+							<label>forca_dada</label>
+							<input value="0" class="form-control" name="forca_dada" type="number" />
+						</div>
+						<div class="input-group">
+							<label>numero_camadas_aco</label>
+							<input value="0" class="form-control" name="numero_camadas_aco" type="number" onchange="fillSteelForms(+this.value)" />
+						</div>
+						<div id="steelForms" class="row">
+						</div>
+					</form>
+					<button id="computeButton" class="col-md-12 btn btn-default">Calcular</button>
+				</div>
+				<div class="col-md-6">
+					<h2>output</h2>
+					<canvas id="plot"></canvas>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
