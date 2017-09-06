@@ -2,3 +2,4 @@ oct2py
 Flask
 numpy
 scipy
+gunicorn
